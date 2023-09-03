@@ -1,0 +1,29 @@
+# Lines starting with # are comments and ignored
+#
+# Each entry starts with no indentation and gives the key used
+# by the menu callback.  By convention, this is nodename/parmname.
+# Multiple keys can be given for the same entry.
+#
+# The next line gives the name of the expression.  Its indentation
+# level is then used for the remainder of the text.  All the
+# code until the next parameter are appended together to make
+# the snippet.  All preceeding indentation is removed.
+# Note that tabs == 8 is assumed.
+
+# Velocity From Points
+attribwrangle/snippet
+    Velocity From Points
+    // Need points reference from second input i.e input 1
+    vector dir = @P - point(1,"P",0);
+    v@v = normalize(dir);
+
+    f@distance = length(dir);
+    v@v *= fit(@distance,0,18,1,.05);
+
+# Power Velocity
+attribwrangle/snippet
+    Power Velocity
+    float expon = chf("Base Exponent")
+    v@v *= pow(expon,rand(@ptnum + 274924));
+
+

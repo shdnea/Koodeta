@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="koodeta_labs" label="Koodeta Labs">
+    <memberTool name="KOO::resetViewport"/>
+    <memberTool name="KOO:changeBackground"/>
+  </toolshelf>
+
+  <tool name="KOO::resetViewport" label="Reload Viewport" icon="$KOODETA/Config/Icons/LOGO_ResetViewport.png">
+    <script scriptType="python"><![CDATA[import sys
+import importlib as imp
+
+SCRIPT_PATH = hou.expandString('$KOODETA')
+path = SCRIPT_PATH + '\scripts\python\ResetViewport'
+sys.path.append(path)
+import reset_viewport
+imp.reload(reset_viewport)
+reset_viewport.resetSceneViewers()]]></script>
+  </tool>
+
+  <tool name="KOO:changeBackground" label="Change Background" icon="$KOODETA/Config/Icons/LOGO_ChangeBackground.png">
+    <script scriptType="python"><![CDATA[import sys
+import toolutils
+
+bg = None
+
+try:
+    #Cycle Next BG
+    if kwargs['ctrlclick']: raise
+    bgs = hou.session.bg[:]
+    bgs = bgs[1:]+bgs[:1]
+    if kwargs['shiftclick']: bgs = ['bw', 'light', 'wb']
+    bg = bgs[0]
+    hou.session.bg = bgs
+except:
+    # Set up default BG Vars
+    hou.session.bg = ['wb','bw', 'light']
+    bg = hou.session.bg[0]
+
+bgs = {'wb':'dark', 'bw':'grey', 'light':'light'}
+
+hou.hscript("viewdisplay -B %s *" % bg)
+]]></script>
+  </tool>
+</shelfDocument>

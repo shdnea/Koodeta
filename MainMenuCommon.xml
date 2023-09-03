@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Using Python 3.7 -->
+
+<mainMenu>
+  <menuBar>
+  
+    <subMenu id="Koodeta_menu">
+      <label> Koodeta </label>
+      <insertBefore>help_menu</insertBefore>
+      <separatorItem />
+        <scriptItem id= "Manager">
+          <label> Manager </label>
+            <scriptCode> 
+          <![CDATA[
+print("Plugins Detected")
+          ]]>
+            </scriptCode>
+        </scriptItem>
+      <separatorItem />
+    </subMenu>
+  
+  </menuBar>
+</mainMenu>

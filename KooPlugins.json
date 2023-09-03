@@ -1,0 +1,17 @@
+{
+    "path": 
+    [
+        "$KOODETA",
+        "$KOODETA/Startup"
+    ],
+    "load_package_once": true,
+    "enable" : true,
+    "env": 
+    [
+        {   
+            "KOODETA": "C:/DEV/Koodeta"
+        }
+    ]
+
+}
+  
