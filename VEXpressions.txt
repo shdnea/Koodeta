@@ -17,13 +17,15 @@ attribwrangle/snippet
     vector dir = @P - point(1,"P",0);
     v@v = normalize(dir);
 
-    f@distance = length(dir);
-    v@v *= fit(@distance,0,18,1,.05);
-
 # Power Velocity
 attribwrangle/snippet
     Power Velocity
-    float expon = chf("Base Exponent")
+    float expon = chf("Base_Exponent");
     v@v *= pow(expon,rand(@ptnum + 274924));
+
+# Normalize Velocity
+attribwrangle/snippet
+    Normalize Velocity
+    v@v = normalize(v@v);
 
 
