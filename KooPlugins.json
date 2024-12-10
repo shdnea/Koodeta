@@ -1,17 +1,12 @@
 {
-    "path": 
-    [
-        "$KOODETA",
-        "$KOODETA/Startup"
+    "path": [
+        "$KOO",
+        "$KOO/Startup"
     ],
     "load_package_once": true,
-    "enable" : true,
-    "env": 
-    [
-        {   
+    "env": [
+        {
             "KOODETA": "C:/DEV/Koodeta"
         }
     ]
-
 }
-  
