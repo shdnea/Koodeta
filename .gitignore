@@ -1,6 +1,9 @@
 # --- Python --- 
-__pycache__/
+*__pycache__*
 *.pyc
 
 # --- Houdini file --- 
-/Otls/backup
+/Otls/backup*
+
+# --- VSCode ---
+.vscode
