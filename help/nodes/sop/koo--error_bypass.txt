@@ -1,0 +1,23 @@
+= Error Bypass =
+
+""" Bypass Error and Warning produce by input geometry. """
+
+=== Overview ===
+The Error and Warning Bypass HDA in Houdini is a utility designed to handle 
+problematic input geometry by bypassing errors and warnings during processing.
+
+=== How to use ===
+* Wire the double sided geometry to the first input.
+* Select severity type you want to ignore.
+  
+@inputs
+
+Input 1:
+    Any Node Type.
+    
+@parameters
+
+== General ==
+
+Ignore:
+    Severity type.

@@ -1,0 +1,34 @@
+= Points Culling =
+
+""" Do points cleanup based on point cloud filtering """
+
+=== Overview ===
+
+The Attribute Delete Plus tool is an enhanced version of the standard Attribute 
+Delete node, designed to provide additional functionality for more flexible and 
+efficient attribute management. This tool expands on the original node by 
+integrating Group Delete and Attribute Cast features directly into its 
+parameters, allowing users to manage both attributes and groups 
+within a single node. 
+
+=== How to use ===
+
+@inputs
+
+Input 1:
+    Point Cloud.
+    
+@parameters
+
+== General ==
+Method:
+    Point Number:
+        Using ptnum to do calculation.
+    ID:
+        Using id to do calculation.
+Seach Radius:
+    radius to search
+Number of Points:
+    Number points threshold.
+Remove Threshold:
+    Threshold value.
