@@ -1,0 +1,12 @@
+# Global UI controls
+
+# Sizes may be Small, Compact, Normal, Large, or Extra Large.
+colors.scheme := "Houdini Dark";
+general.filechooserstyle.menu := "Houdini Chooser Only";
+general.ui.icon_size := "Normal";
+general.ui.scale := 0.875;
+general.uiplaybar.menu := 0;
+ui.bright.val := 1;
+ui.contrast.val := 1;
+ui.gamma.val := 1;
+ui.saturation.val := 1;

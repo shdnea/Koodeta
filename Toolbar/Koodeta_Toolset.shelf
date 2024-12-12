@@ -10,19 +10,20 @@
     <memberTool name="KOO:changeBackground"/>
   </toolshelf>
 
-  <tool name="KOO::resetViewport" label="Reload Viewport" icon="$KOODETA/Config/Icons/LOGO_ResetViewport.png">
+  <tool name="KOO::resetViewport" label="Reload Viewport" icon="$KOODETA/Config/Icons/shelf/ICON_reset.png">
     <script scriptType="python"><![CDATA[import sys
 import importlib as imp
 
 SCRIPT_PATH = hou.expandString('$KOODETA')
 path = SCRIPT_PATH + '\scripts\python\ResetViewport'
 sys.path.append(path)
+
 import reset_viewport
 imp.reload(reset_viewport)
 reset_viewport.resetSceneViewers()]]></script>
   </tool>
 
-  <tool name="KOO:changeBackground" label="Change Background" icon="$KOODETA/Config/Icons/LOGO_ChangeBackground.png">
+  <tool name="KOO:changeBackground" label="Change Background" icon="$KOODETA/Config/Icons/shelf/ICON_changeBackground.png">
     <script scriptType="python"><![CDATA[import sys
 import toolutils
 
