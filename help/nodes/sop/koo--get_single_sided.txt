@@ -1,0 +1,42 @@
+= Get One Sided =
+
+""" Isolate double sided mesh into single sided mesh. 
+Useful for Vellum Simulation. """
+
+=== Overview ===
+The Get One Sided tool is a specialized tool designed to convert 
+double-sided meshes into single-sided meshes. This process is essential 
+for optimizing geometry for simulations, particularly in workflows like 
+Vellum where single-sided meshes improve accuracy and performance.
+
+WARNING:
+    This tool may not work effectively for all types of meshes. For highly 
+    complex input geometry, the resulting single-sided mesh may vary and may 
+    not always produce the desired output. It is recommended to review and 
+    validate the results, especially for intricate or non-manifold geometry.
+
+
+=== How to use ===
+* Wire the double sided geometry to the first input.
+* Use the Front Primitive Selection parameter to specify the front-facing 
+primitive on your input geometry.
+* Fine-tune the Angle Sensitivity parameter to achieve the desired result.
+  
+  WARNING:
+    The Threshold value is highly sensitive, avoid setting values above 
+    1 to maintain accuracy.
+
+@inputs
+
+Double Sided Mesh:
+    Double sided geometry.
+    
+@parameters
+
+== General ==
+
+Front Primitive:
+    Specifies the front-facing primitive.
+Threshold:
+    Determines the threshold for removing back-facing primitives.
+     Higher values may result in more aggressive removal.

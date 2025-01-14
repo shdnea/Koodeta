@@ -14,25 +14,20 @@ a single file.
     <memberTool name="KOO::ChangeBackgroundColor"/>
   </toolshelf>
 
+  <tool name="KOO::resetViewport" label="Reload Viewport" icon="$KOODETA/Config/Icons/shelf/ICON_reset.png">
+    <script scriptType="python"><![CDATA[import sys
+import importlib as imp
 
-<!-- Shelves Setups -->
-  <tool name="KOO::ResetViewport" label="Reload Viewport" 
-    icon="$KOODETA/Config/Icons/LOGO_ResetViewport.png">
-    <script scriptType="python">
-    <![CDATA[
-"""
-@dependencies : viewport_utils.py
-"""
-import importlib as implib
-import viewport_utils
+SCRIPT_PATH = hou.expandString('$KOODETA')
+path = SCRIPT_PATH + '\scripts\python\ResetViewport'
+sys.path.append(path)
 
-implib.reload(viewport_utils)
-viewport_utils.reload_scene_viewers()
-    ]]></script>
+import reset_viewport
+imp.reload(reset_viewport)
+reset_viewport.resetSceneViewers()]]></script>
   </tool>
 
-  <tool name="KOO::ChangeBackgroundColor" label="Change Background Color" 
-    icon="$KOODETA/Config/Icons/LOGO_ChangeBackgroundColor.png">
+  <tool name="KOO:changeBackground" label="Change Background" icon="$KOODETA/Config/Icons/LOGO_ChangeBackground.png">
     <script scriptType="python"><![CDATA[import sys
 import toolutils
 
