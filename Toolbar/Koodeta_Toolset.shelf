@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shelfDocument>
-  <!-- This file contains definitions of shelves, toolbars, and tools.
- It should not be hand-edited when it is being used by the application.
- Note, that two definitions of the same element are not allowed in
- a single file. -->
+<!-- 
+This file contains definitions of shelves, toolbars, and tools.
+It should not be hand-edited when it is being used by the application.
+Note, that two definitions of the same element are not allowed in
+a single file. 
+-->
 
+
+<!-- Container -->
   <toolshelf name="koodeta_labs" label="Koodeta Labs">
-    <memberTool name="KOO::resetViewport"/>
-    <memberTool name="KOO:changeBackground"/>
+    <memberTool name="KOO::ResetViewport"/>
+    <memberTool name="KOO::ChangeBackgroundColor"/>
   </toolshelf>
 
-  <tool name="KOO::resetViewport" label="Reload Viewport" icon="$KOODETA/Config/Icons/LOGO_ResetViewport.png">
-    <script scriptType="python"><![CDATA[import sys
-import importlib as imp
 
-SCRIPT_PATH = hou.expandString('$KOODETA')
-path = SCRIPT_PATH + '\scripts\python\ResetViewport'
-sys.path.append(path)
-import reset_viewport
-imp.reload(reset_viewport)
-reset_viewport.resetSceneViewers()]]></script>
+<!-- Shelves Setups -->
+  <tool name="KOO::ResetViewport" label="Reload Viewport" 
+    icon="$KOODETA/Config/Icons/LOGO_ResetViewport.png">
+    <script scriptType="python">
+    <![CDATA[
+"""
+@dependencies : viewport_utils.py
+"""
+import importlib as implib
+import viewport_utils
+
+implib.reload(viewport_utils)
+viewport_utils.reload_scene_viewers()
+    ]]></script>
   </tool>
 
-  <tool name="KOO:changeBackground" label="Change Background" icon="$KOODETA/Config/Icons/LOGO_ChangeBackground.png">
+  <tool name="KOO::ChangeBackgroundColor" label="Change Background Color" 
+    icon="$KOODETA/Config/Icons/LOGO_ChangeBackgroundColor.png">
     <script scriptType="python"><![CDATA[import sys
 import toolutils
 
