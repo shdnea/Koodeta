@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shelfDocument>
-  <!-- This file contains definitions of shelves, toolbars, and tools.
- It should not be hand-edited when it is being used by the application.
- Note, that two definitions of the same element are not allowed in
- a single file. -->
+<!-- 
+This file contains definitions of shelves, toolbars, and tools.
+It should not be hand-edited when it is being used by the application.
+Note, that two definitions of the same element are not allowed in
+a single file. 
+-->
 
+
+<!-- Container -->
   <toolshelf name="koodeta_labs" label="Koodeta Labs">
-    <memberTool name="KOO::resetViewport"/>
-    <memberTool name="KOO:changeBackground"/>
+    <memberTool name="KOO::ResetViewport"/>
+    <memberTool name="KOO::ChangeBackgroundColor"/>
   </toolshelf>
 
   <tool name="KOO::resetViewport" label="Reload Viewport" icon="$KOODETA/Config/Icons/shelf/ICON_reset.png">
@@ -23,7 +27,7 @@ imp.reload(reset_viewport)
 reset_viewport.resetSceneViewers()]]></script>
   </tool>
 
-  <tool name="KOO:changeBackground" label="Change Background" icon="$KOODETA/Config/Icons/shelf/ICON_changeBackground.png">
+  <tool name="KOO:changeBackground" label="Change Background" icon="$KOODETA/Config/Icons/LOGO_ChangeBackground.png">
     <script scriptType="python"><![CDATA[import sys
 import toolutils
 
