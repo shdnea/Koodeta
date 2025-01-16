@@ -15,6 +15,29 @@
 import hou
 
 def reload_scene_viewers(external_object_visibility = 0):
+    """
+    Reloads all Scene Viewers in the current Houdini desktop, preserving their 
+    settings.
+
+    Args:
+        external_object_visibility (int, optional): Sets the new Scene Viewer's 
+        external object visibility. Defaults to 0.
+            - 0: Hide Other Objects
+            - 1: Show All Objects
+            - 2: Ghost Other Objects
+
+    Steps:
+        1. Identify all Scene Viewers in the current Houdini desktop.
+        2. Create new Scene Viewers to replace the old ones.
+        3. Copy settings from old Scene Viewers to new ones.
+        4. Close the old Scene Viewers.
+
+    Note:
+        - Cannot read existing external object visibility setting of a Scene 
+        Viewer.
+        - Some settings may not work on Floating Pane Tabs.
+        - Orthographic cameras may only be properly set in the main viewport.
+    """
 
     scene_viewers = [pane_tab for pane_tab in hou.ui.paneTabs() 
                      if pane_tab.type() == hou.paneTabType.SceneViewer]
@@ -34,17 +57,12 @@ def reload_scene_viewers(external_object_visibility = 0):
         old_scene_viewer_name = old_scene_viewer.name()
         new_scene_viewer_name = new_scene_viewer.name()
 
-        """
-        Sets new Scene Viewer's external object visibility.
-        - 0 is to "Hide Other Objects" 
-        - 1 is to "Show All Objects"
-        - 2 is to "Ghost Other Objects".
-        Currently this seems to be no way to read the Scene Viewer's 
-        existing setting.
-        """
-        hou.hscript(f"vieweroption -a 
-                    {external_object_visibility} 
-                    {desktop_name}.{new_scene_viewer_name}.world")
+        hou.hscript(
+            "vieweroption -a {0} {1}".format(
+                external_object_visibility, 
+                desktop_name + "." + new_scene_viewer_name + ".world"
+            )
+        )
 
         # Sets the visibilities of Toolbars
         new_scene_viewer.showOperationBar(
@@ -81,6 +99,7 @@ def reload_scene_viewers(external_object_visibility = 0):
             old_scene_viewer.isPickingVisibleGeometry()
         )
         new_scene_viewer.setPickingContainedGeometry(
+            
             old_scene_viewer.isPickingContainedGeometry()
         )
         new_scene_viewer.setWholeGeometryPicking(
@@ -129,8 +148,8 @@ def reload_scene_viewers(external_object_visibility = 0):
 
         # Viewports
         # Disables applying display options to all split viewports
-        hou.hscript(f"vieweroption -s 0 
-                    {desktop_name}.{new_scene_viewer_name}.world")
+        hou.hscript("vieweroption -s 0 {}".format(
+            desktop_name + "." + new_scene_viewer_name + ".world"))
 
         new_scene_viewer.setViewportLayout(old_scene_viewer.viewportLayout())
 
@@ -139,22 +158,27 @@ def reload_scene_viewers(external_object_visibility = 0):
             new_viewport = new_scene_viewer.viewports()[i]
 
             # Sets new current viewport name
-            old_viewport_name = f"{desktop_name}.{old_scene_viewer_name}.world.
-                                {old_viewport.name()}"
-            new_viewport_name = f"{desktop_name}.{new_scene_viewer_name}.world.
-                                {new_viewport.name()}"
-
-            hou.hscript(f"viewcopy 
-                        {old_viewport_name} {new_viewport_name}")
+            old_viewport_name = (
+                desktop_name + "." + old_scene_viewer_name + ".world." + 
+                old_viewport.name()
+            )
+            new_viewport_name = (
+                desktop_name + "." + new_scene_viewer_name + ".world." + 
+                new_viewport.name()
+            )
+            hou.hscript("viewcopy {0} {1}".format(
+                old_viewport_name, new_viewport_name))
 
             # Viewport names may change after the viewcopy command
-            new_viewport_name = f"{desktop_name}.{new_scene_viewer_name}.world.
-                                {new_viewport.name()}"
+            new_viewport_name = (
+            desktop_name + "." + new_scene_viewer_name + ".world." + 
+            new_viewport.name()
+            )
 
             # Sets view transform or camera to look through
             if old_viewport.camera():
-                view_transform = hou.hscript(f"viewtransform -p 
-                                             {old_viewport_name}")[0]
+                view_transform = hou.hscript(
+                    "viewtransform -p {}".format(old_viewport_name))[0]
                 new_transform = view_transform.replace(
                     old_viewport_name, new_viewport_name)
                 hou.hscript(new_transform)

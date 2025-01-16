@@ -7,32 +7,28 @@ Note, that two definitions of the same element are not allowed in
 a single file. 
 -->
 
-
-<!-- Container -->
   <toolshelf name="koodeta_labs" label="Koodeta Labs">
     <memberTool name="KOO::ResetViewport"/>
     <memberTool name="KOO::ChangeBackgroundColor"/>
   </toolshelf>
 
-
-<!-- Tools -->
-  <tool name="KOO::resetViewport" label="Reload Viewport" 
+  <tool name="KOO::ResetViewport" label="Reload Viewport" 
   icon="$KOODETA/Config/Icons/shelf/ICON_reset.png">
-    <script scriptType="python"><![CDATA[
-"""
-@dependencies : viewport_utils.py
-"""
+    <script scriptType="python">\
+    <![CDATA[
 import importlib as imp
 import viewport_utils
 
 imp.reload(viewport_utils)
 viewport_utils.reload_scene_viewers()
-]]></script>
+    ]]>
+    </script>
   </tool>
 
-  <tool name="KOO:changeBackground" label="Change Background" 
-  icon="$KOODETA/Config/Icons/LOGO_ChangeBackground.png">
-    <script scriptType="python"><![CDATA[
+  <tool name="KOO::ChangeBackgroundColor" label="Change Background" 
+  icon="$KOODETA/Config/Icons/shelf/ICON_changeBackground.png">
+    <script scriptType="python">
+    <![CDATA[
 import sys
 import toolutils
 
@@ -54,6 +50,7 @@ except:
 bgs = {'wb':'dark', 'bw':'grey', 'light':'light'}
 
 hou.hscript("viewdisplay -B %s *" % bg)
-]]></script>
+    ]]>
+    </script>
   </tool>
 </shelfDocument>
