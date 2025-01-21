@@ -1,6 +1,6 @@
 """
         @since          2025-15-01
-        @lastupdate     2025-15-01
+        @lastupdate     2025-22-01
 
         @author         SideFX Labs 
         @contributor    Syahdan Micoy Nazera (shdnea@gmail.com)
@@ -8,11 +8,14 @@
         @brief          Houdini Viewport Utilities
         @dependencies   Python 3.10, hou
         @version        1.0.0
-        @todos          ...
+        @todos          Update module to class
+                        Add more method
+                        Add change background color method
         @links          https://github.com/sideeffects/SideFXLabs
 """
 
 import hou
+import toolutils
 
 def reload_scene_viewers(external_object_visibility = 0):
     """
@@ -20,7 +23,7 @@ def reload_scene_viewers(external_object_visibility = 0):
     settings.
 
     Args:
-        external_object_visibility (int, optional): Sets the new Scene Viewer's 
+        external_object_visibility (int, optional): Sets the new Scene Viewer"s 
         external object visibility. Defaults to 0.
             - 0: Hide Other Objects
             - 1: Show All Objects
@@ -88,7 +91,7 @@ def reload_scene_viewers(external_object_visibility = 0):
         )
 
         # Scene Viewer settings
-        # Currently doesn't seem to work on Floating Pane Tabs
+        # Currently doesn"t seem to work on Floating Pane Tabs
         new_scene_viewer.referencePlane().setIsVisible(
             old_scene_viewer.referencePlane().isVisible()
         )
@@ -200,3 +203,32 @@ def reload_scene_viewers(external_object_visibility = 0):
             new_display_options.setLighting(old_display_options.lighting())
         
         old_scene_viewer.close()
+
+def change_viewport_background_color():
+    """
+    Changes the background color of the current Scene Viewer viewport.
+
+    Steps:
+        1. Get the current Scene Viewer viewport.
+        2. Set the background color of the viewport.
+    """
+    # Background style variable
+    bg = None
+
+    try:
+        # Cycle to the next background style
+        bgs = hou.session.bg[:]
+        bgs = bgs[1:] + bgs[:1]
+        bg = bgs[0]
+        hou.session.bg = bgs
+    except:
+        # Set up default background styles if not already defined
+        hou.session.bg = ["wb", "light"]
+        bg = hou.session.bg[0]
+
+    # Map background style names to Houdini"s internal commands
+    background_styles = {"wb": "dark", "light": "light"}
+
+    # Apply the selected background style
+    if bg in background_styles:
+        hou.hscript("viewdisplay -B {} *".format(background_styles[bg]))

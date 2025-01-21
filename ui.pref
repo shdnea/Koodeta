@@ -4,7 +4,7 @@
 colors.scheme := "Houdini Dark";
 general.filechooserstyle.menu := "Houdini Chooser Only";
 general.ui.icon_size := "Normal";
-general.ui.scale := 0.875;
+general.ui.scale := 1;
 general.uiplaybar.menu := 0;
 ui.bright.val := 1;
 ui.contrast.val := 1;
