@@ -29,27 +29,11 @@ viewport_utils.reload_scene_viewers()
   icon="$KOODETA/Config/Icons/shelf/ICON_changeBackground.png">
     <script scriptType="python">
     <![CDATA[
-import sys
-import toolutils
+import importlib as imp
+import viewport_utils
 
-bg = None
-
-try:
-    #Cycle Next BG
-    if kwargs['ctrlclick']: raise
-    bgs = hou.session.bg[:]
-    bgs = bgs[1:]+bgs[:1]
-    if kwargs['shiftclick']: bgs = ['bw', 'light', 'wb']
-    bg = bgs[0]
-    hou.session.bg = bgs
-except:
-    # Set up default BG Vars
-    hou.session.bg = ['wb','bw', 'light']
-    bg = hou.session.bg[0]
-
-bgs = {'wb':'dark', 'bw':'grey', 'light':'light'}
-
-hou.hscript("viewdisplay -B %s *" % bg)
+imp.reload(viewport_utils)
+viewport_utils.change_viewport_background_color()
     ]]>
     </script>
   </tool>
