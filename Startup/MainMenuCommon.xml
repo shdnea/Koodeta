@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Using Python 3.10 -->
+
+<mainMenu>
+  <menuBar>
+  
+    <subMenu id="Koodeta_menu">
+      <label> Koodeta </label>
+      <insertBefore>help_menu</insertBefore>
+      <separatorItem />
+        <scriptItem id= "Varmulas">
+          <label> Varmulas </label>
+            <scriptCode> 
+<![CDATA[
+"""
+        @tool           Varmula
+        @since          2025-28-01
+        @author         Syahdan Micoy Nazera
+"""
+import importlib as implib
+import traceback
+from Tools.Varmula import main, ui
+
+try:
+    implib.reload(ui)
+    implib.reload(main)
+    main.run()
+except Exception as e:
+    traceback.print_exc()
+]]>
+            </scriptCode>
+        </scriptItem>
+      <separatorItem />
+    </subMenu>
+  
+  </menuBar>
+</mainMenu>

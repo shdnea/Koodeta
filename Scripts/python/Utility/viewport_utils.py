@@ -15,7 +15,6 @@
 """
 
 import hou
-import toolutils
 
 def reload_scene_viewers(external_object_visibility = 0):
     """
