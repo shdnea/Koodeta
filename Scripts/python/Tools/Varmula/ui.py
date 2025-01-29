@@ -11,13 +11,12 @@
 
 from hutil.Qt import QtCore, QtWidgets
 
-
 class VarmulaUI(QtWidgets.QWidget):
     def __init__(self):
         super(VarmulaUI, self).__init__()
         main_layout = QtWidgets.QVBoxLayout(self)
 
-        self.group_box = QtWidgets.QGroupBox("Project Name :")
+        self.group_box = QtWidgets.QGroupBox("PROJECT NAME :")
         group_layout = QtWidgets.QVBoxLayout(self.group_box)
 
         self.line_edit = QtWidgets.QLineEdit("Koodeta")
@@ -34,7 +33,7 @@ class VarmulaUI(QtWidgets.QWidget):
         form_layout.addWidget(self.combo_box)
 
         self.push_button = QtWidgets.QPushButton("Initialize")
-        self.push_button.setFixedHeight(30)
+        self.push_button.setFixedHeight(50)
 
         main_layout.addWidget(self.group_box)
         main_layout.addLayout(form_layout)
