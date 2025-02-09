@@ -1,0 +1,88 @@
+/* General Styles */
+* {
+    font-family: Arial, sans-serif;
+    font-size: 12.5px;
+}
+
+/* QWidget Styles */
+QWidget {
+    background-color: #1a314c;
+    color: whitesmoke;
+}
+
+QLineEdit {
+    background-color: #19293d;
+
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+QLineEdit::hover {
+    border: 1.5px solid #365b85;
+    padding: 10px;
+}
+
+/* QPushButton Styles */
+QPushButton {
+    background-color: #376daa;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+QPushButton::hover {
+    background-color: #548ed1;
+    padding: 10px;
+}
+
+
+QLabel {
+    color: whitesmoke;
+    font-size: 12.5px;
+}
+
+QComboBox {
+    background-color: #548ed1;
+    background-color: #19293d;
+    color: whitesmoke;
+    border: 1px solid #365b85;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+QComboBox::drop-down {
+    width: 15px;
+    border-left-width: 2.5px;
+    border-left-color: #365b85;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+    image: url(/resources/down-chevron.png);
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1a314c;
+    color: whitesmoke;
+    selection-background-color: #365b85;
+    selection-color: whitesmoke;
+}
+
+QComboBox::selection {
+    background-color: #1a314c;
+    color: whitesmoke;
+    selection-background-color: #365b85;
+    selection-color: whitesmoke;
+}
+
+QComboBox:drop-down {
+    background: #548ed1;
+}
