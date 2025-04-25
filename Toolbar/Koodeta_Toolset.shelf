@@ -10,6 +10,7 @@ a single file.
   <toolshelf name="koodeta_labs" label="Koodeta Labs">
     <memberTool name="KOO::ResetViewport"/>
     <memberTool name="KOO::ChangeBackgroundColor"/>
+    <memberTool name="KOO::StickyBoxNotes"/>
   </toolshelf>
 
   <tool name="KOO::ResetViewport" label="Reload Viewport" 
@@ -17,7 +18,7 @@ a single file.
     <script scriptType="python">\
     <![CDATA[
 import importlib as imp
-import viewport_utils
+from Utility import viewport_utils
 
 imp.reload(viewport_utils)
 viewport_utils.reload_scene_viewers()
@@ -30,10 +31,23 @@ viewport_utils.reload_scene_viewers()
     <script scriptType="python">
     <![CDATA[
 import importlib as imp
-import viewport_utils
+from Utility import viewport_utils
 
 imp.reload(viewport_utils)
 viewport_utils.change_viewport_background_color()
+    ]]>
+    </script>
+  </tool>
+
+    <tool name="KOO::StickyBoxNotes" label="Sticky Box Notes" 
+  icon="$KOODETA/Config/Icons/shelf/ICON_stickyNotes.png">
+    <script scriptType="python">\
+    <![CDATA[
+import importlib as imp
+from Utility import network_utils
+
+imp.reload(network_utils)
+network_utils.create_sticky_box()
     ]]>
     </script>
   </tool>
