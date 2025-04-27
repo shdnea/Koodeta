@@ -11,3 +11,13 @@ vector get_non_collinear_vec(int geometry, start_pt; float collinear_threshold; 
     }
     return test_vector;
 } 
+
+
+int compare_quaternions(vector4 q1, q2; float threshold){
+    if (abs(dot(q1, q2)) > 1 - threshold){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
