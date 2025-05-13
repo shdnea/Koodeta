@@ -4,35 +4,27 @@
 
 <mainMenu>
   <menuBar>
-  
     <subMenu id="Koodeta_menu">
       <label> Koodeta </label>
       <insertBefore>help_menu</insertBefore>
       <separatorItem />
-        <scriptItem id= "Varmulas">
-          <label> Varmulas </label>
-            <scriptCode> 
-<![CDATA[
-"""
-        @tool           Varmula
-        @since          2025-28-01
-        @author         Syahdan Micoy Nazera
-"""
-import importlib as implib
+      <scriptItem id= "variable_logs">
+        <label> Variables Log </label>
+        <scriptCode>
+          <![CDATA[
 import traceback
-from Tools.Varmula import main, ui
+from Utility import utils as logger
 
+log = logger.LogUtils()
 try:
-    implib.reload(ui)
-    implib.reload(main)
-    main.run()
+  log.log_env_variables()
 except Exception as e:
-    traceback.print_exc()
+  log.log_error("Error in logging variables: " + str(e))
+  log.log_error(traceback.format_exc())
 ]]>
-            </scriptCode>
-        </scriptItem>
+        </scriptCode>
+      </scriptItem>
       <separatorItem />
     </subMenu>
-  
   </menuBar>
 </mainMenu>
