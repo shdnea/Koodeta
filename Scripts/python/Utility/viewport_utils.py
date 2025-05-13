@@ -1,9 +1,12 @@
 """
-        @since          2025-15-01
-        @lastupdate     2025-22-01
+        @file           viewport_utils.py
 
         @author         SideFX Labs 
         @contributor    Syahdan Micoy Nazera (shdnea@gmail.com)
+        
+        @since          2025-15-01
+        @lastupdate     2025-22-01
+
 
         @brief          Houdini Viewport Utilities
         @dependencies   Python 3.10, hou
