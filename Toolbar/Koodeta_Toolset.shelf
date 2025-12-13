@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shelfDocument>
-<!-- 
+  <!-- 
 This file contains definitions of shelves, toolbars, and tools.
 It should not be hand-edited when it is being used by the application.
 Note, that two definitions of the same element are not allowed in
@@ -13,10 +13,9 @@ a single file.
     <memberTool name="KOO::StickyBoxNotes"/>
   </toolshelf>
 
-  <tool name="KOO::ResetViewport" label="Reload Viewport" 
-  icon="$KOODETA/Config/Icons/shelf/ICON_reset.png">
+  <tool name="KOO::ResetViewport" label="Reload Viewport" icon="$KOODETA/Config/Icons/shelf/ICON_reset.png">
     <script scriptType="python">\
-    <![CDATA[
+                                                                                  <![CDATA[
 import importlib as imp
 from Utility import viewport_utils
 
@@ -26,10 +25,9 @@ viewport_utils.reload_scene_viewers()
     </script>
   </tool>
 
-  <tool name="KOO::ChangeBackgroundColor" label="Change Background" 
-  icon="$KOODETA/Config/Icons/shelf/ICON_changeBackground.png">
+  <tool name="KOO::ChangeBackgroundColor" label="Change Background" icon="$KOODETA/Config/Icons/shelf/ICON_changeBackground.png">
     <script scriptType="python">
-    <![CDATA[
+      <![CDATA[
 import importlib as imp
 from Utility import viewport_utils
 
@@ -39,10 +37,9 @@ viewport_utils.change_viewport_background_color()
     </script>
   </tool>
 
-    <tool name="KOO::StickyBoxNotes" label="Sticky Box Notes" 
-  icon="$KOODETA/Config/Icons/shelf/ICON_stickyNotes.png">
+  <tool name="KOO::StickyBoxNotes" label="Sticky Box Notes" icon="$KOODETA/Config/Icons/shelf/ICON_stickyNotes.png">
     <script scriptType="python">\
-    <![CDATA[
+                                                                                  <![CDATA[
 import importlib as imp
 from Utility import network_utils
 
