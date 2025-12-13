@@ -6,70 +6,59 @@ menubar      -1
 statusbar    -1
 radial menu set main
 root {
-    split 0.479167 H {
+    split 0.454688 H {
         split 0.118462 H L {
             tabs 0 1 {
-                pane panetab14 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m treecontrol
-            }
-            split 0.346801 V {
-                tabs 0 1 {
-                    pane panetab22 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m sceneview
-                    pane panetab2 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m chaneditor
-                    pane panetab3 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m iprviewer
-                    pane panetab4 -a 0 -l 10 -H /img/ -T IMG -m imageview
-                    pane panetab13 -a 0 -l 10 -H /ch/ -T CHOPNET -m channelview
-                    pane panetab11 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m details
-                }
-                tabs 0 1 {
-                    pane panetab20 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m details
-                    pane panetab21 -a 0 -l 0 -H /obj/ -T OBJ -m chaneditor
-                }
-            }
-        }
-        split 0.498792 V R {
-            split 0.5 H R {
-                tabs 0 1 {
-                    pane panetab5 -a 0 -l 1 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m neteditor
-                    pane panetab6 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m takelist
-                    pane panetab12 -a 0 -l 0 -H /obj/ -T OBJ -m perfmon
-                }
-                split 0.27056 V R {
-                    tabs 0 1 {
-                        pane panetab15 -a 0 -l 1 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m parmeditor
-                    }
-                    tabs 0 1 {
-                        pane panetab17 -a 0 -l 0 -H /obj/ -T OBJ -m python
-                        pane panetab18 -a 0 -l 0 -H /obj/ -T OBJ -m textport
-                        pane panetab16 -a 0 -l 1 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m treecontrol
-                        pane panetab19 -a 0 -l 0 -H /obj/ -T OBJ -m materialpalette
-                    }
-                }
+                pane panetab14 -a 0 -l 10 -H /obj/ -T OBJ -m treecontrol
             }
             tabs 0 1 {
-                pane panetab7 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m neteditor
-                pane panetab8 -a 0 -l 0 -H /obj/ -T OBJ -m treecontrol
-                pane panetab9 -a 0 -l 10 -H /obj/fx/pyrosolver1/dopnet1/FORCES/ -T DOP -m materialpalette
-                pane panetab10 -a 0 -l 0 -H /obj/ -T OBJ -m assetbrowser
+                pane panetab20 -a 0 -l 10 -H /obj/ -T OBJ -m sceneview
+                pane panetab2 -a 0 -l 10 -H /obj/ -T OBJ -m chaneditor
+                pane panetab3 -a 0 -l 10 -H /obj/ -T OBJ -m iprviewer
+                pane panetab4 -a 0 -l 10 -H /img/ -T IMG -m imageview
+                pane panetab13 -a 0 -l 10 -H /ch/ -T CHOPNET -m channelview
+                pane panetab11 -a 0 -l 10 -H /obj/ -T OBJ -m details
+            }
+        }
+        split 0.5 H R {
+            split 0.356061 V {
+                split 0.5 H {
+                    tabs 0 1 {
+                        pane panetab5 -a 0 -l 1 -H /obj/ -T OBJ -m neteditor
+                        pane panetab6 -a 0 -l 10 -H /obj/ -T OBJ -m takelist
+                        pane panetab12 -a 0 -l 0 -H /obj/ -T OBJ -m perfmon
+                    }
+                    tabs 0 1 {
+                        pane panetab7 -a 0 -l 1 -H /obj/ -T OBJ -m parmeditor
+                    }
+                }
+                tabs 0 1 {
+                    pane panetab8 -a 0 -l 0 -H /obj/ -T OBJ -m neteditor
+                    pane panetab1 -a 0 -l 1 -H /obj/ -T OBJ -m details
+                    pane panetab9 -a 0 -l 0 -H /obj/ -T OBJ -m chaneditor
+                }
+            }
+            split 0.27056 V R {
+                tabs 0 1 {
+                    pane panetab15 -a 0 -l 1 -H /obj/ -T OBJ -m parmeditor
+                }
+                tabs 0 1 {
+                    pane panetab17 -a 0 -l 0 -H /obj/ -T OBJ -m python
+                    pane panetab18 -a 0 -l 0 -H /obj/ -T OBJ -m textport
+                    pane panetab16 -a 0 -l 1 -H /obj/ -T OBJ -m treecontrol
+                    pane panetab19 -a 0 -l 0 -H /obj/ -T OBJ -m materialpalette
+                }
             }
         }
     }
 }
 shelfdock -o 1 -l icon_and_text -G "0.50 0.50" add shelf_set_1 shelf_set_2
 treecontrol -a 0 -h 0 -i 1 -f 0 -O 0 -S 0 -D 0 -H 0 -V 0 -C 0 -I 0 -R 0 panetab14
-viewerstow -x open -b stow -l open -m hide -c hide -d open ${DESKNAME}.panetab22.world
-vieweroption -a 0 ${DESKNAME}.panetab22.world
-viewlayout -s 2 ${DESKNAME}.panetab22.world
-viewtype -t ortho_right ${DESKNAME}.panetab22.world.`vpname("${DESKNAME}.panetab22.world",4)`
-viewtype -t ortho_front ${DESKNAME}.panetab22.world.`vpname("${DESKNAME}.panetab22.world",3)`
-viewtype -t ortho_top ${DESKNAME}.panetab22.world.`vpname("${DESKNAME}.panetab22.world",1)`
-viewtype -t perspective ${DESKNAME}.panetab22.world.`vpname("${DESKNAME}.panetab22.world",2)`
 iprview -t 0.1 -l 0 -e 1 -u 1  panetab3
 chopview -a 0 -c "" -k 1 -m 1 -b 1 -e 1 -f 0 -g 0 -H 1 -i 0 -j 1 -l 0 -n 1 -V 0 -y 0 -B 0 -s 0 -S 0.034375 -u 0 -v 0 -h -10 310 -r -1.5 1.5 panetab13
 geospreadsheet -c 0 -l horizontal -s 0.5 -m none -f 0 panetab11
 scenegraphtree -S 0.25 -m 2 -p "/collections /lights" -c  -i  -o  -x 1 -s 1 -M 0 -C primtype,descendants,kind,populated,loaded,activation,visibility,solo,selectability  panetab11
-geospreadsheet -c 0 -l horizontal -s 0.5 -m none -f 0 panetab20
-scenegraphtree -S 0.25 -m 2 -p "/collections /lights" -c  -i  -o  -x 1 -s 1 -M 0 -C primtype,descendants,kind,populated,loaded,activation,visibility,solo,selectability  panetab20
-networkeditor -p '{\n	"taskgraphcollapsemode":"Off",\n	"backgroundimageediting":"0",\n	"gridxstep":"5.0",\n	"overviewmode":"2",\n	"workitemattrtocollapseby":"",\n	"showparmdialogmax":"1",\n	"showtaskgraphperf":"0",\n	"palettecolors":"",\n	"showtree":"0",\n	"taskgraphsortcriteria":"Automatic",\n	"showparmdialog":"1",\n	"showspareinputdep":"1",\n	"taskgraphperfstatname":"Cook Time",\n	"showmenu":"1",\n	"taskgraphsortdirection":"0",\n	"typesidebarsplit":"0.25",\n	"showdep":"0",\n	"showtasksmenu":"1",\n	"showcopsmenu":"1",\n	"treesplit":"0.25",\n	"palettemode":"0",\n	"gridmode":"2",\n	"showgrouplist":"0",\n	"gridystep":"5.0",\n	"showperfstats":"1",\n	"overviewbounds":"0.000000 0.000000 395.700000 330.900000",\n	"perfstatname":"Time",\n	"palettesize":"150 150",\n	"grouplistsplit":"0.75",\n	"showchilddep":"1",\n	"backgroundimagebrightness":"0.99",\n	"workitemcolorattribute":"",\n	"useworkitemcolorattribute":"1",\n	"showtypesidebar":"0"\n}\n' panetab5
+networkeditor -p '{\n	"backgroundimagebrightness":"0.99",\n	"gridmode":"0",\n	"showcopsmenu":"1",\n	"taskgraphcollapsemode":"Off",\n	"showtasksmenu":"1",\n	"useworkitemcolorattribute":"1",\n	"typesidebarsplit":"0.25",\n	"showmenu":"1",\n	"gridxstep":"5.0",\n	"treesplit":"0.25",\n	"showparmdialogmax":"1",\n	"perfstatname":"Time",\n	"palettemode":"0",\n	"taskgraphsortdirection":"0",\n	"showchilddep":"1",\n	"backgroundimageediting":"0",\n	"showtaskgraphperf":"0",\n	"showgrouplist":"0",\n	"showperfstats":"1",\n	"showparmdialog":"0",\n	"overviewmode":"2",\n	"showdep":"0",\n	"palettecolors":"",\n	"showspareinputdep":"1",\n	"workitemcolorattribute":"",\n	"palettesize":"150 150",\n	"showtypesidebar":"0",\n	"showtree":"0",\n	"overviewbounds":"0.000000 0.000000 207.300000 204.000000",\n	"taskgraphperfstatname":"Cook Time",\n	"gridystep":"5.0",\n	"taskgraphsortcriteria":"Automatic",\n	"workitemattrtocollapseby":"",\n	"grouplistsplit":"0.75"\n}\n' panetab5
 netcolumns -c display,xray,select,origin,capture,bone -n OBJ panetab5
 netcolumns -c display,render,template,selectabletemplate,highlight,unload,bypass,lock -n SOP panetab5
 netcolumns -c delscript,comment -n CHOPNET panetab5
@@ -90,25 +79,34 @@ netcolumns -c delscript,comment -n DIR panetab5
 netcolumns -c delscript,comment -n DATA panetab5
 takelist -w 1 -G 0.5 panetab6
 performance -c on -d on -f on -g off -j on -k on -m off -n on -o on -t off -v on -p on -y on -u on -e off -r absolute -R seconds -w tree panetab12
+parmeditor -T 0.25 -w 0 panetab7
+geospreadsheet -c 0 -l horizontal -s 0.5 -m none -f 0 panetab1
+scenegraphtree -S 0.25 -m 2 -p "/collections /lights" -c  -i  -o  -x 1 -s 1 -M 0 -C primtype,descendants,kind,populated,loaded,activation,visibility,solo,selectability  panetab1
+networkeditor -p '{\n	"backgroundimagebrightness":"1.0",\n	"gridmode":"0",\n	"showcopsmenu":"1",\n	"taskgraphcollapsemode":"Off",\n	"showtasksmenu":"1",\n	"useworkitemcolorattribute":"0",\n	"typesidebarsplit":"0.25",\n	"showmenu":"1",\n	"gridxstep":"2.0",\n	"treesplit":"0.25",\n	"showparmdialogmax":"1",\n	"perfstatname":"Time",\n	"palettemode":"0",\n	"taskgraphsortdirection":"0",\n	"showchilddep":"1",\n	"backgroundimageediting":"0",\n	"showtaskgraphperf":"0",\n	"showgrouplist":"0",\n	"showperfstats":"1",\n	"showparmdialog":"0",\n	"overviewmode":"2",\n	"showdep":"0",\n	"palettecolors":"",\n	"showspareinputdep":"1",\n	"workitemcolorattribute":"",\n	"palettesize":"150 150",\n	"showtypesidebar":"0",\n	"showtree":"0",\n	"overviewbounds":"0.000000 0.000000 414.600000 103.500000",\n	"taskgraphperfstatname":"Cook Time",\n	"gridystep":"1.0",\n	"taskgraphsortcriteria":"Automatic",\n	"workitemattrtocollapseby":"",\n	"grouplistsplit":"0.75"\n}\n' panetab8
+netcolumns -c display,xray,select,origin,capture,bone -n OBJ panetab8
+netcolumns -c display,render,template,selectabletemplate,highlight,unload,bypass,lock -n SOP panetab8
+netcolumns -c delscript,comment -n CHOPNET panetab8
+netcolumns -c display,export,audio,bypass,lock -n CHOP panetab8
+netcolumns -c startrender,bypass,lock -n ROP panetab8
+netcolumns -c delscript,comment -n SHOP panetab8
+netcolumns -c display,render,template,bypass -n COP2 panetab8
+netcolumns -c delscript,comment -n IMG panetab8
+netcolumns -c delscript,comment,input -n VOP panetab8
+netcolumns -c delscript,comment -n VOPNET panetab8
+netcolumns -c delscript,comment -n DOP panetab8
+netcolumns -c delscript,comment -n TOP panetab8
+netcolumns -c delscript,comment -n TOPNET panetab8
+netcolumns -c display,bypass,delscript,comment,input -n LOP panetab8
+netcolumns -c delscript,comment -n COP panetab8
+netcolumns -c delscript,comment -n MGR panetab8
+netcolumns -c delscript,comment -n DIR panetab8
+netcolumns -c delscript,comment -n DATA panetab8
 parmeditor -T 0.25 -w 0 panetab15
 treecontrol -a 0 -h 0 -i 1 -f 0 -O 0 -S 0 -D 0 -H 0 -V 0 -C 0 -I 0 -R 0 panetab16
-networkeditor -p '{\n	"taskgraphcollapsemode":"Off",\n	"backgroundimageediting":"0",\n	"gridxstep":"2.0",\n	"overviewmode":"2",\n	"workitemattrtocollapseby":"",\n	"showparmdialogmax":"1",\n	"showtaskgraphperf":"0",\n	"palettecolors":"",\n	"obj:listmode":"0",\n	"showtree":"0",\n	"taskgraphsortcriteria":"Automatic",\n	"showparmdialog":"0",\n	"showtimedep":"0",\n	"showspareinputdep":"1",\n	"taskgraphperfstatname":"Cook Time",\n	"showmenu":"1",\n	"taskgraphsortdirection":"0",\n	"sop:listmode":"0",\n	"typesidebarsplit":"0.25",\n	"showdep":"0",\n	"showtasksmenu":"1",\n	"showcopsmenu":"1",\n	"treesplit":"0.25",\n	"palettemode":"0",\n	"gridmode":"0",\n	"showgrouplist":"0",\n	"gridystep":"1.0",\n	"showperfstats":"1",\n	"overviewbounds":"0.000000 0.000000 297.900000 75.000000",\n	"perfstatname":"Time",\n	"palettesize":"150 150",\n	"grouplistsplit":"0.75",\n	"showchilddep":"1",\n	"backgroundimagebrightness":"1.0",\n	"workitemcolorattribute":"",\n	"useworkitemcolorattribute":"0",\n	"showtypesidebar":"0"\n}\n' panetab7
-netcolumns -c display,xray,select,origin,capture,bone -n OBJ panetab7
-netcolumns -c display,render,template,selectabletemplate,highlight,unload,bypass,lock -n SOP panetab7
-netcolumns -c delscript,comment -n CHOPNET panetab7
-netcolumns -c display,export,audio,bypass,lock -n CHOP panetab7
-netcolumns -c startrender,bypass,lock -n ROP panetab7
-netcolumns -c delscript,comment -n SHOP panetab7
-netcolumns -c display,render,template,bypass -n COP2 panetab7
-netcolumns -c delscript,comment -n IMG panetab7
-netcolumns -c delscript,comment,input -n VOP panetab7
-netcolumns -c delscript,comment -n VOPNET panetab7
-netcolumns -c delscript,comment -n DOP panetab7
-netcolumns -c delscript,comment -n TOP panetab7
-netcolumns -c delscript,comment -n TOPNET panetab7
-netcolumns -c display,bypass,delscript,comment,input -n LOP panetab7
-netcolumns -c delscript,comment -n COP panetab7
-netcolumns -c delscript,comment -n MGR panetab7
-netcolumns -c delscript,comment -n DIR panetab7
-netcolumns -c delscript,comment -n DATA panetab7
-treecontrol -a 0 -h 0 -i 1 -f 0 -O 0 -S 0 -D 0 -H 0 -V 0 -C 0 -I 0 -R 0 panetab8
+viewerstow -x open -b stow -l open -m hide -c open -d open ${DESKNAME}.panetab20.world
+vieweroption -a 0 ${DESKNAME}.panetab20.world
+viewlayout -s 2 ${DESKNAME}.panetab20.world
+viewtype -t ortho_right ${DESKNAME}.panetab20.world.`vpname("${DESKNAME}.panetab20.world",4)`
+viewtype -t ortho_front ${DESKNAME}.panetab20.world.`vpname("${DESKNAME}.panetab20.world",3)`
+viewtype -t ortho_top ${DESKNAME}.panetab20.world.`vpname("${DESKNAME}.panetab20.world",1)`
+viewtype -t perspective ${DESKNAME}.panetab20.world.`vpname("${DESKNAME}.panetab20.world",2)`
