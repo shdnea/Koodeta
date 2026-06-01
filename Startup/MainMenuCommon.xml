@@ -9,18 +9,14 @@
       <insertBefore>help_menu</insertBefore>
       <separatorItem />
       <scriptItem id= "variable_logs">
-        <label> Variables Log </label>
+        <label> Acnologia </label>
         <scriptCode>
           <![CDATA[
-import traceback
-from Utility import utils as logger
+import importlib as imp
+from Tools.Acnologia import main
 
-log = logger.LogUtils()
-try:
-  log.log_env_variables()
-except Exception as e:
-  log.log_error("Error in logging variables: " + str(e))
-  log.log_error(traceback.format_exc())
+imp.reload(main)
+main.launch()
 ]]>
         </scriptCode>
       </scriptItem>

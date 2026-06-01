@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "label": "Create Sphere",
+  "category": "Geometry",
+  "icon": "⬤",
+  "tooltip": "Create a sphere on the selected node",
+  "script": "import hou\nnode = hou.node('/obj').createNode('geo')\nnode.createNode('sphere')"
+}

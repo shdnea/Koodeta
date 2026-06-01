@@ -1,5 +1,5 @@
 """
-        @file           utils.py
+        @file           utility.py
 
         @author         Syahdan Micoy Nazera
         
@@ -18,18 +18,6 @@ from PySide2.QtWidgets import QWidget
 from PySide2.QtCore import QFile, QTextStream
 
 import hou
-
-class WidgetUtils:
-    """Utility class for widgets."""
-
-    @staticmethod
-    def koodeta_stylesheet():
-        """Load and apply QSS file."""
-
-        cwd = FileUtils.q_script_folder()
-        file_name = "stylesheet.qss"
-        style = f"{cwd}/{file_name}"
-        return style
 
 class FileUtils:
     """Utility class for file operations."""

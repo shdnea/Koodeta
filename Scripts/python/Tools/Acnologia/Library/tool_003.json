@@ -1,0 +1,8 @@
+{
+  "id": 3,
+  "label": "Create Grid",
+  "category": "Geometry",
+  "icon": "⊞",
+  "tooltip": "Create a subdivided grid",
+  "script": "import hou\nnode = hou.node('/obj').createNode('geo')\nnode.createNode('grid')"
+}

@@ -1,0 +1,8 @@
+{
+  "id": 4,
+  "label": "Fetch Simulation",
+  "category": "FX",
+  "icon": "●",
+  "tooltip": "Description",
+  "script": "import hou\nprint('Hello')"
+}
