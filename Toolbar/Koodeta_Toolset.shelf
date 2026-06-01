@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shelfDocument>
-  <!-- 
-This file contains definitions of shelves, toolbars, and tools.
-It should not be hand-edited when it is being used by the application.
-Note, that two definitions of the same element are not allowed in
-a single file. 
--->
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
 
   <toolshelf name="koodeta_labs" label="Koodeta Labs">
     <memberTool name="KOO::ResetViewport"/>
@@ -14,38 +12,33 @@ a single file.
   </toolshelf>
 
   <tool name="KOO::ResetViewport" label="Reload Viewport" icon="$KOODETA/Config/Icons/shelf/ICON_reset.png">
-    <script scriptType="python">\
-                                                                                  <![CDATA[
+    <script scriptType="python"><![CDATA[\
+                                                                                        
 import importlib as imp
 from Utility import viewport_utils
 
 imp.reload(viewport_utils)
 viewport_utils.reload_scene_viewers()
-    ]]>
-    </script>
+    ]]></script>
   </tool>
 
   <tool name="KOO::ChangeBackgroundColor" label="Change Background" icon="$KOODETA/Config/Icons/shelf/ICON_changeBackground.png">
-    <script scriptType="python">
-      <![CDATA[
+    <script scriptType="python"><![CDATA[
 import importlib as imp
 from Utility import viewport_utils
 
 imp.reload(viewport_utils)
 viewport_utils.change_viewport_background_color()
-    ]]>
-    </script>
+    ]]></script>
   </tool>
 
   <tool name="KOO::StickyBoxNotes" label="Sticky Box Notes" icon="$KOODETA/Config/Icons/shelf/ICON_stickyNotes.png">
-    <script scriptType="python">\
-                                                                                  <![CDATA[
+    <script scriptType="python"><![CDATA[
 import importlib as imp
-from Utility import network_utils
+from Utility import sceneNetwork_utils
 
-imp.reload(network_utils)
-network_utils.create_sticky_box()
-    ]]>
-    </script>
+imp.reload(sceneNetwork_utils)
+sceneNetwork_utils.create_sticky_box()
+    ]]></script>
   </tool>
 </shelfDocument>

@@ -1,10 +1,10 @@
 """
-        @file           network_utils.py
+        @file           sceneNetwork_utils.py
 
         @author         Syahdan Micoy Nazera
         
         @since          2025-15-01
-        @lastupdate     2025-22-01
+        @lastupdate     2026-06-01
         
         @brief          Houdini Network Context Utilities
         @dependencies   Python 3.10, hou
